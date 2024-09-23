@@ -21,4 +21,14 @@ RSpec.describe "largest_number" do
     18, 31, 25, 62, 42, 84, 7, 13, -9, 59, -17, 90, 46, 29]
     expect(largest_number(arr)).to eq(99)
   end
+
+  it "gracefully exits empty arrays" do 
+    arr = []
+    expect(largest_number(arr)).to eq("array is empty")
+  end
+
+  it "ignores strings included in mixed arrays" do
+    arr = [3, "hello", 2, -7, "world", 4]
+    expect(largest_number(arr)).to eq(4)
+  end
 end
