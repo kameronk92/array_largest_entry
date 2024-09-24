@@ -36,4 +36,25 @@ RSpec.describe "largest_number" do
     arr = [12.7, 5.5, -3.14, 23.89, 9.0, 100.01, 55.55, -7.6, 0.01]
     expect(largest_number(arr)).to eq(100.01)
   end
+
+  it "handles arrays with only identical entries" do
+    arr = [10, 10, 10, 10, 10]
+    expect(largest_number(arr)).to eq(10)
+  end
+
+  it "handles arrays with only negative numbers" do
+    arr = [-50, -100, -1, -23]
+    expect(largest_number(arr)).to eq(-1)
+  end
+
+  it "handles mixed floats and integers" do
+    arr = [5, 12.7, -3.14, 100, -50, 55.55]
+    expect(largest_number(arr)).to eq(100)
+  end
+
+  it "handles non numeric mixed arrays" do
+    arr = [3, nil, true, -7, false, 4]
+    expect(largest_number(arr)).to eq(4)
+  end
+
 end
