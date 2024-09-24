@@ -18,7 +18,7 @@ RSpec.describe "largest_number" do
 
   it "can handle larger arrays" do
     arr = [34, -2, 16, 99, 3, 27, 56, -45, 0, 23, 12, 5, 77, 65, 88, -34, 
-    18, 31, 25, 62, 42, 84, 7, 13, -9, 59, -17, 90, 46, 29]
+    18, 31, 25, 62, 42, 84, 7, 13, -9, 59, -17, 90, 46, 29, -1000]
     expect(largest_number(arr)).to eq(99)
   end
 
@@ -30,5 +30,10 @@ RSpec.describe "largest_number" do
   it "ignores strings included in mixed arrays" do
     arr = [3, "hello", 2, -7, "world", 4]
     expect(largest_number(arr)).to eq(4)
+  end
+
+  it "works with floats" do
+    arr = [12.7, 5.5, -3.14, 23.89, 9.0, 100.01, 55.55, -7.6, 0.01]
+    expect(largest_number(arr)).to eq(100.01)
   end
 end
